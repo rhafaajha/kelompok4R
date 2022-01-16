@@ -1,15 +1,61 @@
 <!DOCTYPE html>
- <html>
+<html>
 
- <head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython.js"
+        integrity="sha512-Dr8IR/2fk/pBmngFLduWN5Ys/t7lcPxGgLCulHdTdgDrDRnGb+ANMxGXq+DKVN87jom+N3BrzzI476Pf98RReA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.4/brython_stdlib.js"
+        integrity="sha512-kMRN6F4Yq4sNLbPG2lH3EO9n776JHHZub+UWogDxVjh9uTnoVo3wtN/rnQD4C4/AZtqI2zQdvdouGAAxOGwNeA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Konversi Bilangan</title>
- </head>
+</head>
 
- <body>
-    <div style="text-align:center;margin-top:200px;">
-    <h1>Dari desimal ke biner, octal, dan hexa</h1>
+<body onload="brython()">
+    <h1 class="title">Konversi Bilangan</h1>
+
+    <div class="content">
+        <div class="container select-option-container">
+            <select id="select">
+                <optgroup label="Dari">
+                    <option>Desimal</option>
+                    <option>Biner</option>
+                    <option>Octal</option>
+                    <option>Hexa</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="container input-container">
+            <div class="input">
+                <h3>Input</h3>
+                <input type="text" id="Masukan" placeholder="Input 1">
+            </div>
+        </div>
+
+        <div class="container button-container">
+            <button id="btn">Lihat hasil</button>
+        </div>
+
+        <div class="container output-container">
+            <div id="Desimal">0</div>
+        </div>
+        <div class="container output-container">
+            <div id="Biner">0</div>
+        </div>
+        <div class="container output-container">
+            <div id="Octal">0</div>
+        </div>
+        <div class="container output-container">
+            <div id="Hexa">0</div>
+        </div>
     </div>
-    <script type="text/python" src="coba_coba.py"></script>
- </body>
 
- </html>
+    <script type="text/python" src="coba_coba.py"></script>
+</body>
+
+</html>
