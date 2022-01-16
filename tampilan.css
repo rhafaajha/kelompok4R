@@ -34,10 +34,12 @@ body{
 }
 
 .input{
-    padding: 5px 0;
+    padding: 12px 0;
 }
 
 .output-container{
+    display: flex;
+    flex-direction: row;
     width: 100px;
     height: 21px;
     border: 1px solid #000;
