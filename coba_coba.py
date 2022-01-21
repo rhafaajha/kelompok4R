@@ -13,7 +13,7 @@ input = {'1': input1,
          '2': input2}
 
 # Dictionary Bangun Datar
-type1 = {'formula': lambda TB, BB, x, y: (BB / ((TB/100)*(TB/100))), 'input1': 'Tinggi Badan (cm)', 'input2': 'Berat Badan (kg)'}
+type1 = {'formula': lambda TB, BB, x: (BB / ((TB/100)*(TB/100))), 'input1': 'Tinggi Badan (cm)', 'input2': 'Berat Badan (kg)'}
 
 # Fungsi untuk mengubah string dari input ke int atau float
 def getNum(x):
@@ -38,17 +38,16 @@ def getNum(x):
 
 # Fungsi untuk memanggil formula pada dictionary
 def formula(x, num1, num2):
-    y = selectCalculated.value
     for key in type1.keys():
         if key.find(x) > -1:
-            return type1[x][y]['formula'](num1, num2)
+            return type1[x]['formula'](num1, num2)
 
 # Fungsi Main
 # Dijalankan ketika button di-click atau tombol 'enter' ditekan
 def main(ev):
     num1 = getNum(input1.value)
     num2 = getNum(input2.value)
-    result = formula(selectType.value, num1, num2)
+    result = formula(num1, num2)
     output.textContent = str(result)
 
 # Fungsi keyEnter
