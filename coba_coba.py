@@ -7,35 +7,13 @@ input2 = document['input2']
 button = document['btn']
 output = document['output']
 
-# Dictionary untuk menyimapan variabel input1, input2, input3, dan input4
+# Dictionary untuk menyimapan variabel input1 dan input2
 # untuk memudahkan saat pemanggilan keempat variabel secara berurut
 input = {'1': input1,
          '2': input2}
 
-# Setiap bangun datar dan bangun ruang memiliki key 'Keliling' dan 'Luas' 
-# yang masing-masing value-nya berisi key 'formula' dan informasi input yang diperlukan (input1, input2, input3, input4).
-# Parameter x, y, atau z pada lambda formula adalah parameter yang tidak terpakai, 
-# karena pada fungsi formula (dibawah) secara default diberikan empat argumen dari setiap input (input1, input2, input3, input4).
-
 # Dictionary Bangun Datar
 type1 = {'formula': lambda TB, BB, x, y: (BB / ((TB/100)*(TB/100))), 'input1': 'Tinggi Badan (cm)', 'input2': 'Berat Badan (kg)'}
-
-# Fungsi yang akan dijalankan ketika pilihan 'yang akan dihitung' diubah
-def selectCalculatedAction(ev):
-    x = selectType.value
-    y = selectCalculated.value
-    # Reset Input Field
-    for i in range(1, 5):
-        input[str(i)].value = ''
-        input[str(i)].disabled = False
-    # Mengubah input placeholder (keterangan) pada setiap input, menyesuikan pada setiap bangun datar dan ruang yang dipilih
-    # Jika input placeholder == 'Kosongkan', maka akan di-disabled
-    for key in type1.keys():
-        if key.find(x) > -1:
-            for i in range(1, 5):
-                input[str(i)].placeholder = type1[x][y]['input' + str(i)]
-                if input[str(i)].placeholder == 'Kosongkan':
-                    input[str(i)].disabled = True
 
 # Fungsi untuk mengubah string dari input ke int atau float
 def getNum(x):
@@ -80,11 +58,6 @@ def keyEnter(ev):
     if traceKey == 'Enter':
         main(0)
 
-
-selectType.bind('change',
-                selectTypeAction)  # Ketika pilihan bangun datar dan ruang berubah, maka akan menjalankan fungsi 'selectTypeAction'
-selectCalculated.bind('change',
-                      selectCalculatedAction)  # Ketika pilihan 'yang akan dihitung' berubah, maka akan menjalankan fungsi 'selectCalculatedAction'
 button.bind('click', main)  # Memanggil 'Fungsi Main' ketika button di-click
 
 # Mengarahakan ke 'Fungsi keyEnter' ketika keyboard ditekan pada salah satu input field
