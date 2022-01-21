@@ -13,7 +13,7 @@ input = {'1': input1,
          '2': input2}
 
 # Dictionary
-type1 = {'formula': lambda TB, BB: BB / ((TB/100) ** 2),
+type1 = {'formula': lambda TB, BB: round(BB / ((TB/100) ** 2), 1),
          'input1': 'Tinggi Badan (cm)', 'input2': 'Berat Badan (kg)'}
 
 # Fungsi untuk mengubah string dari input ke int atau float
