@@ -19,6 +19,7 @@ body{
     align-items: center;
     justify-content: center;
     padding: 2% 0;
+    color: #FFFFFF
 }
 
 .content{
@@ -40,7 +41,8 @@ body{
 
 .output-container{
     width: 100px;
-    height: 21px;
-    border: 1px solid #000;
+    height: 40px;
+    border: 1px solid #FFFFFF;
     text-align: center;
+}
 }
