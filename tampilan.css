@@ -31,7 +31,6 @@ body{
 }
 
 .input-container{
-    height: 30px;
     display: flex;
     flex-direction: row;
 }
@@ -44,5 +43,5 @@ body{
     width: 100px;
     height: 40px;
     background-color: #FFFFFF;
-    text-align: center center;
+    text-align: center;
 }
