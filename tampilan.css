@@ -18,7 +18,7 @@ body{
     align-items: center;
     justify-content: center;
     padding: 2% 0;
-    color: #FFFFFF
+    text-color: white;
 }
 
 .content{
@@ -35,12 +35,12 @@ body{
 }
 
 .input{
-    padding: 20px;
+    padding: 5px;
 }
 
 .output-container{
     width: 100px;
     height: 25px;
-    background-color: #FFFFFF;
+    background-color: white;
     text-align: center;
 }
