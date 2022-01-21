@@ -13,7 +13,7 @@ input = {'1': input1,
          '2': input2}
 
 # Dictionary
-type1 = {'formula': lambda TB, BB: (BB / ((TB/100)*(TB/100))), 'input1': 'Tinggi Badan (cm)', 'input2': 'Berat Badan (kg)'}
+type1 = {'formula': lambda input1, input2: (input2 / ((input1/100)*(input1/100))), 'input1': 'Tinggi Badan (cm)', 'input2': 'Berat Badan (kg)'}
 
 # Fungsi untuk mengubah string dari input ke int atau float
 def getNum(x):
@@ -40,7 +40,7 @@ def getNum(x):
 def formula(x, num1, num2):
     for key in type1.keys():
         if key.find(x) > -1:
-            return type1[x]['formula'](num1, num2)
+            return type1['formula'](num1, num2)
 
 # Fungsi Main
 # Dijalankan ketika button di-click atau tombol 'enter' ditekan
