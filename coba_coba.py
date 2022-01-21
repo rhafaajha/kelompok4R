@@ -12,8 +12,8 @@ output = document['output']
 input = {'1': input1,
          '2': input2}
 
-# Dictionary Bangun Datar
-type1 = {'formula': lambda TB, BB, x: (BB / ((TB/100)*(TB/100))), 'input1': 'Tinggi Badan (cm)', 'input2': 'Berat Badan (kg)'}
+# Dictionary
+type1 = {'formula': lambda TB, BB: (BB / ((TB/100)*(TB/100))), 'input1': 'Tinggi Badan (cm)', 'input2': 'Berat Badan (kg)'}
 
 # Fungsi untuk mengubah string dari input ke int atau float
 def getNum(x):
@@ -28,7 +28,7 @@ def getNum(x):
         # Jika input (var temp) masih string (gagal convert ke int dan float),
         # maka munculkan alert dan return dengan variable kosong ('')
         if temp != '' and type(temp) is str:
-            alert('Harap masukkan angka')
+            alert('Harap masukkan data yang sesuai!!!')
             temp = ''
             input1.value = temp
             return temp
