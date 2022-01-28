@@ -2,14 +2,14 @@ from browser import document, alert
 import math
 
 # Deklarasi Variable
-input1 = document['input1']
-input2 = document['input2']
+data1 = document['data1']
+data2 = document['data2']
 button = document['btn']
 output = document['output']
 
 # Dictionary
-type1 = {'formula': lambda TB, BB: round(BB / ((TB/100) ** 2), 1),
-         'input1': 'Tinggi Badan (cm)', 'input2': 'Berat Badan (kg)'}
+type1 = {'hitung': lambda TB, BB: round(BB / ((TB/100) ** 2), 1),
+         'data1': 'Tinggi Badan (cm)', 'data2': 'Berat Badan (kg)'}
 
 # Fungsi untuk mengubah string dari input ke int atau float
 def getNum(x):
@@ -22,21 +22,21 @@ def getNum(x):
         if temp != '' and type(temp) is str:
             alert('Harap masukkan data yang sesuai!!!')
             temp = ''
-            input1.value = temp
+            data1.value = temp
             return temp
         else:
             return temp
 
 # Fungsi untuk memanggil formula pada dictionary
-def formula(num1, num2):
+def hitung(num1, num2):
     for key in type1.keys():
-        return type1['formula'](num1, num2)
+        return type1['hitung'](num1, num2)
 
 # Fungsi Main
 def main(ev):
-    num1 = getNum(input1.value)
-    num2 = getNum(input2.value)
-    result = formula(num1, num2)
+    num1 = getNum(data1.value)
+    num2 = getNum(data2.value)
+    result = hitung(num1, num2)
     output.textContent = str(result)
 
 # Fungsi keyEnter
@@ -48,5 +48,5 @@ def keyEnter(ev):
 button.bind('click', main)  # Memanggil 'Fungsi Main' ketika button di-click
 
 # Mengarahakan ke 'Fungsi keyEnter' ketika keyboard ditekan pada salah satu input field
-input1.bind("keypress", keyEnter)
-input2.bind("keypress", keyEnter)
+data1.bind("keypress", keyEnter)
+data2.bind("keypress", keyEnter)
